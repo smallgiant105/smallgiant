@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoring Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic CSS styles for layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .services, .about, .testimonials {
+            background-color: #ffffff;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .services .service-item, .testimonials .testimonial-item {
+            margin: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+
+        /* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Section Styles */
+.section {
+    padding: 50px 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.services, .about, .testimonials {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.service-item, .testimonial-item {
+    margin: 20px 0;
+}
+
+/* Services Section */
+.service-item {
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Testimonials Section */
+.testimonial-item {
+    font-style: italic;
+    color: #555;
+}
+
+.testimonial-item strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .section {
+        padding: 30px 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 12px;
+    }
+
+    .contact-form button {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .services, .about, .testimonials {
+        padding: 20px;
+    }
+
+    .service-item h3 {
+        font-size: 20px;
+    }
+
+    .service-item p {
+        font-size: 14px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Online Tutoring Services</h1>
+        <nav>
+            <ul>
+                <li><a href="landingpage.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <h2>Welcome to Your Learning Journey!</h2>
+        <p>We provide high-quality tutoring in a variety of subjects to help you achieve academic success. Whether you need help with math, science, languages, or test preparation, we are here to support your learning goals.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <h2>Our Services</h2>
+        <div class="service-item">
+            <h3>Math Tutoring</h3>
+            <p>We offer personalized math tutoring for all levels, from elementary school to college-level courses.</p>
+        </div>
+        <div class="service-item">
+            <h3>Science Tutoring</h3>
+            <p>Get expert help with chemistry, physics, biology, and more, all tailored to your individual needs.</p>
+        </div>
+        <div class="service-item">
+            <h3>Test Preparation</h3>
+            <p>We provide SAT, ACT, GRE, and other test preparation services to help you perform at your best.</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section about">
+        <h2>About Us</h2>
+        <p>Our team of professional tutors is dedicated to helping students achieve their academic goals. With years of experience in teaching and a passion for learning, we tailor our tutoring sessions to suit each student’s individual learning style.</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+        <h2>What Our Students Say</h2>
+        <div class="testimonial-item">
+            <p>"The tutoring I received helped me improve my grades significantly. My tutor was patient and made learning so much easier!"</p>
+            <strong>- Sarah L.</strong>
+        </div>
+        <div class="testimonial-item">
+            <p>"Thanks to the SAT prep sessions, I scored 1000 points higher! Highly recommend these tutors!"</p>
+            <strong>- David M.</strong>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or would like to schedule a session, please fill out the form below:</p>
+        <div class="contact-form">
+            <form action="submit_form.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; smallgiantcc Online Tutoring Services | All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

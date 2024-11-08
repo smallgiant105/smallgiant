@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy & Sell Entertainment</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        /* Scrollable container for Entertainment section */
+        .entertainment-container {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        .entertainment-item {
+            min-width: 250px;
+            margin-right: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .entertainment-item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .entertainment-item h3 {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .price, .view-more-btn {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .view-more-btn {
+            background-color: #333;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .view-more-btn:hover {
+            background-color: #555;
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            height: 400px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+
+        /* Carousel Control Button Styles */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 30px;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    position: relative;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+footer span {
+    font-weight: bold;
+}
+
+/* Simple Animated Smoke Effect */
+@keyframes smoke {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-30px) scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+}
+
+footer {
+    position: relative;
+    text-align: center;
+}
+
+footer p::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: smoke 3s ease-in-out finite;
+}
+ h2{
+    text-align: center;
+    font-weight: 350;
+    font-family: monospace;
+ }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Buy and Sell </h1>
+    <p>Explore products, services, and more!</p>
+</header>
+
+<div class="container">
+    <!-- Entertainment Section -->
+    <h2> Market </h2>
+    <div class="entertainment-container">
+        <div class="entertainment-item">
+            <img src="market.jpg" alt="Event 1">
+            <h3>Electronics</h3>
+            <p class="price">N$10 - N$ 50 0000</p>
+            <button class="view-more-btn" onclick="viewMoreDetails('Live Music Night')">View More</button>
+        </div>
+        <div class="entertainment-item">
+            <img src="buynsell.jpg" alt="Event 2">
+            <h3> Propertise </h3>
+            <p class="price"> N$5 000 - N$ 1000 000 0000</p>
+            <button class="view-more-btn" onclick="viewMoreDetails('Comedy Show')">View More</button>
+        </div>
+        <div class="entertainment-item">
+            <img src="buynsell.jpg" alt="Event 3">
+            <h3> Locals </h3>
+            <p class="price"> N$10 - N$ 50 0000</p>
+            <button class="view-more-btn" onclick="viewMoreDetails('DJ Party')">View More</button>
+        </div>
+        <div class="entertainment-item">
+            <img src="buynsell.jpg" alt="Event 4">
+            <h3> Household </h3>
+            <p class="price"> N$10 - N$ 150 0000</p>
+            <button class="view-more-btn" onclick="viewMoreDetails('Movie Screening')">View More</button>
+        </div>
+    </div>
+
+    <!-- Autoplay Carousel Section -->
+    <h2>Featured Items</h2>
+    <div class="carousel-container">
+        <div class="carousel-slide" id="carouselSlide">
+            <div class="carousel-item"><img src="poitjiepot.jpg"></div>
+            <div class="carousel-item"><img src="tuckshop.jpg"></div>
+            <div class="carousel-item"> <img src="poitjiepot.jpg"></div>
+            <div class="carousel-item"> <img src="tuckshop.jpg"></div>
+        </div>
+        <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2024 <span>smallgiantcc</span>. All rights reserved.</p>
+</footer>
+
+<script>
+    // Carousel Logic for autoplay and navigation
+    let currentIndex = 0;
+
+    function moveCarousel(direction) {
+        const slide = document.getElementById('carouselSlide');
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+
+        currentIndex = (currentIndex + direction + totalItems) % totalItems;
+        const offset = -currentIndex * 100;
+
+        slide.style.transform = `translateX(${offset}%)`;
+    }
+
+    // Autoplay Function
+    function autoPlayCarousel() {
+        setInterval(() => {
+            moveCarousel(1);
+        }, 3000);  // Change slides every 3 seconds
+    }
+
+    autoPlayCarousel();  // Start the autoplay
+
+    // Function for the "View More" button
+    function viewMoreDetails(item) {
+        alert(`More details for: ${item}`);
+    }
+</script>
+
+</body>
+</html>

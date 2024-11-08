@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NamHits - Music & Video Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Header with Search Bar -->
+    <header class="header">
+        <div class="logo">
+            <h1>NamHits</h1>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search for music or videos...">
+            <button onclick="searchContent()">Search</button>
+        </div>
+        <style>
+
+            /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Header and Search Bar */
+.header {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.search-container input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-container button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Video Gallery Section */
+.video-gallery {
+    padding: 30px;
+    text-align: center;
+}
+
+.videos-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.video-item {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.video-item img {
+    width: 100%;
+}
+
+.video-item h3 {
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+/* TikTok Scroll Section */
+.tiktok-scroll {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: scroll;
+    gap: 15px;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.scroll-item {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 500px;
+    scroll-snap-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    position: relative;
+}
+
+.scroll-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Video Player Modal */
+.video-player-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.video-player-modal .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.video-player-modal iframe {
+    max-width: 100%;
+    max-height: 315px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+        </style>
+    </header>
+
+    <!-- Video Display Section -->
+    <section class="video-gallery">
+        <h2>Popular Music & Videos</h2>
+        <div class="videos-container">
+            <!-- Dynamically populated videos will go here -->
+        </div>
+    </section>
+
+    <!-- TikTok Scroll Section -->
+    <section class="tiktok-scroll">
+        <h2>Trending TikTok Videos</h2>
+        <div class="scroll-container">
+            <div class="scroll-item">
+                <img src="https://via.placeholder.com/300x500?text=Video+1" alt="Video 1">
+            </div>
+            <div class="scroll-item">
+                <img src="https://via.placeholder.com/300x500?text=Video+2" alt="Video 2">
+            </div>
+            <div class="scroll-item">
+                <img src="https://www.youtube.com/shorts/R7h69W3zw74/300x500?text=Video+3" alt="Video 3">
+            </div>
+            <!-- More scroll items -->
+        </div>
+    </section>
+
+    <video controls autoplay loop muted>
+        <source src="Tower_of_God_S02E10_KimoiTV.com.mp4" type="video/mp4">
+        <source src="https://www.youtube.com/shorts/R7h69W3zw74?feature=share" type="video/ogg">
+        <source src="your-video.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Video Player Modal (for YouTube-like interface) -->
+    <div id="videoPlayerModal" class="video-player-modal">
+        <span class="close-btn" onclick="closeModal()">X</span>
+        <div class="modal-content">
+            <iframe id="videoPlayer" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+    <script src="script.js">
+        // Function to handle search (You can expand this for API integration)
+function searchContent() {
+    const query = document.getElementById('searchBar').value.trim();
+    alert('Searching for: ' + query);
+    // In a real application, you'd fetch results using an API (like YouTube API).
+}
+
+// Function to open video player modal
+function openVideoPlayer(videoId) {
+    const modal = document.getElementById('videoPlayerModal');
+    const player = document.getElementById('videoPlayer');
+    player.src = `https://www.youtube.com/shorts/R7h69W3zw74'${videoId}?autoplay=1`;
+    modal.style.display = 'flex';
+}
+
+// Function to close the video player modal
+function closeModal() {
+    const modal = document.getElementById('videoPlayerModal');
+    const player = document.getElementById('videoPlayer');
+    player.src = ''; // Stop the video
+    modal.style.display = 'none';
+}
+
+// Example function to dynamically populate video gallery
+function populateVideos() {
+    const videosContainer = document.querySelector('.videos-container');
+    
+    // Sample data for demonstration
+    const videos = [
+        { title: 'Sample Video 1', thumbnail: 'https://via.placeholder.com/300x200?text=Video+1', videoId: 'dQw4w9WgXcQ' },
+        { title: 'Sample Video 2', thumbnail: 'https://via.placeholder.com/300x200?text=Video+2', videoId: 'oHg5SJYRHA0' },
+        { title: 'Sample Video 3', thumbnail: 'https://via.placeholder.com/300x200?text=Video+3', videoId: 'kJQP7kiw5Fk' }
+    ];
+    
+    // Dynamically add videos to gallery
+    videos.forEach(video => {
+        const videoItem = document.createElement('div');
+        videoItem.classList.add('video-item');
+        videoItem.innerHTML = `
+            <img src="${video.thumbnail}" alt="${video.title}" onclick="openVideoPlayer('${video.videoId}')">
+            <h3>${video.title}</h3>
+        `;
+        videosContainer.appendChild(videoItem);
+    });
+}
+
+// Initialize the page with videos
+document.addEventListener('DOMContentLoaded', populateVideos);
+
+    </script>
+</body>
+</html>

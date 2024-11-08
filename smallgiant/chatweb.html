@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Online Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: white;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 5px;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product h3 {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .product .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        .add-to-cart {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background-color: #3498db;
+        }
+
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .cart:active {
+            background-color: #c0392b;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 20%;
+            bottom: 0;
+        }
+
+        .cart-count {
+            font-size: 18px;
+            font-weight: bold;
+            position: relative;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to Our Online Shop</h1>
+    </header>
+
+    <!-- Product Listings -->
+    <div class="container">
+        <!-- Product 1 -->
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product Image">
+            <h3>Product Name</h3>
+            <p>Product description goes here.</p>
+            <p class="price">N$19.99</p>
+            <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product Image">
+            <h3>Another Product</h3>
+            <p>More details about this product.</p>
+            <p class="price">N$29.99</p>
+            <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Product Image">
+            <h3>Third Product</h3>
+            <p>Description of this product.</p>
+            <p class="price">N$39.99</p>
+            <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+        </div>
+    </div>
+
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 smallgiant cc Online Shop</p>
+    </footer>
+
+    <script>
+        let cartCount = 0;
+
+        // Function to update cart count
+        function addToCart() {
+            cartCount++;
+            document.querySelector('.cart-count').textContent = cartCount;
+        }
+    </script>
+</body>
+</html>
